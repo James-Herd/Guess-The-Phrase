@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guess</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Guess The Phrase</h1>
+    </header>
+
+    <section>
+      <div id="alphabet-container" class="alphabet-container">
+        <div onclick="guessedLetter('A', this)" class="alphabet-letter">
+          <p>A</p>
+        </div>
+        <div onclick="guessedLetter('B', this)" class="alphabet-letter">
+          <p>B</p>
+        </div>
+        <div onclick="guessedLetter('C', this)" class="alphabet-letter">
+          <p>C</p>
+        </div>
+        <div onclick="guessedLetter('D', this)" class="alphabet-letter">
+          <p>D</p>
+        </div>
+        <div onclick="guessedLetter('E', this)" class="alphabet-letter">
+          <p>E</p>
+        </div>
+        <div onclick="guessedLetter('F', this)" class="alphabet-letter">
+          <p>F</p>
+        </div>
+        <div onclick="guessedLetter('G', this)" class="alphabet-letter">
+          <p>G</p>
+        </div>
+        <div onclick="guessedLetter('H', this)" class="alphabet-letter">
+          <p>H</p>
+        </div>
+        <div onclick="guessedLetter('I', this)" class="alphabet-letter">
+          <p>I</p>
+        </div>
+        <div onclick="guessedLetter('J', this)" class="alphabet-letter">
+          <p>J</p>
+        </div>
+        <div onclick="guessedLetter('K', this)" class="alphabet-letter">
+          <p>K</p>
+        </div>
+        <div onclick="guessedLetter('L', this)" class="alphabet-letter">
+          <p>L</p>
+        </div>
+        <div onclick="guessedLetter('M', this)" class="alphabet-letter">
+          <p>M</p>
+        </div>
+        <div onclick="guessedLetter('N', this)" class="alphabet-letter">
+          <p>N</p>
+        </div>
+        <div onclick="guessedLetter('O', this)" class="alphabet-letter">
+          <p>O</p>
+        </div>
+        <div onclick="guessedLetter('P', this)" class="alphabet-letter">
+          <p>P</p>
+        </div>
+        <div onclick="guessedLetter('Q', this)" class="alphabet-letter">
+          <p>Q</p>
+        </div>
+        <div onclick="guessedLetter('R', this)" class="alphabet-letter">
+          <p>R</p>
+        </div>
+        <div onclick="guessedLetter('S', this)" class="alphabet-letter">
+          <p>S</p>
+        </div>
+        <div onclick="guessedLetter('T', this)" class="alphabet-letter">
+          <p>T</p>
+        </div>
+        <div onclick="guessedLetter('U', this)" class="alphabet-letter">
+          <p>U</p>
+        </div>
+        <div onclick="guessedLetter('V', this)" class="alphabet-letter">
+          <p>V</p>
+        </div>
+        <div onclick="guessedLetter('W', this)" class="alphabet-letter">
+          <p>W</p>
+        </div>
+        <div onclick="guessedLetter('X', this)" class="alphabet-letter">
+          <p>X</p>
+        </div>
+        <div onclick="guessedLetter('Y', this)" class="alphabet-letter">
+          <p>Y</p>
+        </div>
+        <div onclick="guessedLetter('Z', this)" class="alphabet-letter">
+          <p>Z</p>
+        </div>
+      </div>
+
+      <div id="game-info-container" class="game-info-container">
+        <div onclick="generateNewPhrase()" class="game-button">
+          <p>New Phrase</p>
+        </div>
+        <div class="game-button" id="timer">60</div>
+        <div class="game-button">
+          <p id="guesses">Guesses</p>
+        </div>
+      </div>
+
+      <div id="phrase-panel" class="phrase-panel"></div>
+      <div id="winnerMessagePanel" class="winnerMessagePanel displayNone">
+        <img src="confetti.gif" />
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
