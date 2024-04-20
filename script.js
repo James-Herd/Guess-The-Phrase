@@ -1,6 +1,7 @@
 let phrase = "";
 let copyOfPhrase = "";
 let guesses = 0;
+let startTime = 0;
 let guessedLetters = [];
 let alphabet = [
   "A",
@@ -30,26 +31,28 @@ let alphabet = [
   "Y",
   "Z",
 ];
+let timerInterval;
+let timerDisplay = document.getElementById("timerDisplay");
 
 function timer() {
-  let seconds = 60;
-  let timerButton = document.getElementById("timer");
+  startTime = 0;
+  timerDisplay.textContent = startTime;
+  clearInterval(timerInterval);
 
-  for (i = 0; i < 60; i++) {
-    setTimeout(() => {
-      seconds = seconds -= 1;
-      timerButton.innerText = seconds;
-    }, 1000);
-  }
+  timerInterval = setInterval(function () {
+    if (copyOfPhrase.length === 0) {
+      clearInterval(timerInterval); // Stop the timer
+      return;
+    }
+    startTime++;
+    timerDisplay.textContent = startTime;
+  }, 1000);
 }
 
 function guessedLetter(letter, element) {
-  timer();
   incrementGuesses();
   blurGuessedLetters(element);
-
   revealCorrectlyGuessedLetters(letter);
-
   gameWonMessage(letter);
 }
 
@@ -87,8 +90,8 @@ function gameWonMessage(letter) {
       x.classList.remove("displayNone");
       setTimeout(() => {
         x.classList.add("displayNone");
-      }, 2000);
-    }, 100);
+      }, 1800);
+    }, 50);
   }
 }
 
@@ -97,6 +100,7 @@ function blurGuessedLetters(element) {
 }
 
 function generateNewPhrase() {
+  timer();
   clearCurrentPhrase();
   clearGuessesCounter();
   phrase = getRandomPhrase();
@@ -214,4 +218,6 @@ const PHRASES = [
   "STRIVE FOR GREATNESS EVERY DAY",
 ];
 
-window.onload(generateNewPhrase());
+window.onload = function () {
+  generateNewPhrase();
+};
