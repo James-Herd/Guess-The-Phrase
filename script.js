@@ -49,6 +49,17 @@ function timer() {
   }, 1000);
 }
 
+function displayUniqueLettersCount(copyOfPhrase) {
+  let element = document.getElementById("unique-letters");
+  let uniqueLetters = new Set();
+
+  for (let i = 0; i < copyOfPhrase.length; i++) {
+    uniqueLetters.add(copyOfPhrase[i]);
+  }
+
+  element.innerText = "Unique Letters: " + uniqueLetters.size;
+}
+
 function guessedLetter(letter, element) {
   incrementGuesses();
   blurGuessedLetters(element);
@@ -105,6 +116,7 @@ function generateNewPhrase() {
   clearGuessesCounter();
   phrase = getRandomPhrase();
   copyOfPhrase = phrase;
+  displayUniqueLettersCount(copyOfPhrase);
   generateMarkupForNewPhrase(phrase);
   resetBlurredAlphabetLetters();
 }
